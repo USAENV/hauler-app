@@ -1,0 +1,19 @@
+runtime: python39
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+- url: /.*
+  static_files: index.html
+  upload: index.html
+- url: /script.js
+  static_files: script.js
+  upload: script.js
+- url: /style.css
+  static_files: style.css
+  upload: style.css
+- url: /logo.png
+  static_files: logo.png
+  upload: logo.png
+- url: /hauler_data.json
+  static_files: hauler_data.json
+  upload: hauler_data.json

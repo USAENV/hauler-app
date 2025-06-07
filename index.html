@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hauler Mapping Tool</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+        async
+        defer
+    ></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="USA Environmental Services Logo" style="height: 80px;" />
+        <h1>Hauler Mapping Tool</h1>
+    </header>
+
+    <main>
+        <div class="controls">
+            <input type="text" id="addressInput" placeholder="Enter a service address" />
+            <select id="vendorFilter">
+                <option value="All">All Vendors</option>
+                <option value="Yes">Preferred Vendors Only</option>
+                <option value="No">Other Vendors Only</option>
+            </select>
+            <button onclick="findHaulers()">Find Haulers</button>
+        </div>
+
+        <div id="map"></div>
+        <div id="hauler-details" class="hauler-details"></div>
+    </main>
+
+    <button id="heatmapToggle" onclick="toggleHeatmap()">Toggle Heatmap</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
